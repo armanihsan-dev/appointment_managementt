@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <div className="flex h-screen max-h-fit">
       {/* Todo : OTP VERIFICATION | passkey model */}
-      <section className="remove-scrollbar container my-auto">
-        <div className="sub-container max-w-[496px]">
+      <section className="remove-scrollbar container">
+        <div className="sub-container max-w-[460px] ">
           <Image
             src={'/icons/logo-name.svg'}
             width={100}
@@ -32,7 +32,7 @@ const Home = () => {
         height={1000}
         width={1000}
         alt="patient"
-        className="side-img max-w-[50%]"
+        className="side-img max-w-[50%]  "
       />
     </div>
   );
