@@ -23,7 +23,7 @@ export const createUser = async (user: CreateUserParams) => {
       user.name
     );
     return parseStringify(newuser);
-  } catch (error: any) {
+  } catch (error) {
     if (error && error.code === 409) {
       const existingUser = await users.list([
         Query.equal('email', [user.email]),
@@ -37,7 +37,7 @@ export const getUser = async (userId: string) => {
   try {
     const user = await users.get(userId);
     return parseStringify(user);
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
   }
 };
@@ -49,7 +49,7 @@ export const getPatient = async (userId: string) => {
       [Query.equal('userId', [userId])]
     );
     return parseStringify(patients.documents[0]);
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
   }
 };

@@ -4,13 +4,11 @@ import {
   APPWRITE_DATABASE_ID,
   databases,
   messaging,
-  PATIENT_COLLECTION_ID,
 } from '@/lib/appwrite.config';
 import { ID, Query } from 'node-appwrite';
 import { formatDateTime, parseStringify } from '@/lib/utils';
 import { Appointment } from '@/Types/appwrite.types';
 import { revalidatePath } from 'next/cache';
-import twilio from 'twilio';
 
 export const createAppointment = async (
   appointment: CreateAppointmentParams
@@ -73,13 +71,17 @@ export const getRecentAppointments = async () => {
       cancelledCount: 0,
     };
     const counts = (appointments.documents as Appointment[]).reduce(
-      (acc: any, appointment: any) => {
-        if (appointment.status === 'scheduled') {
-          acc.scheduledCount += 1;
-        } else if (appointment.status === 'pending') {
-          acc.pendingCount += 1;
-        } else if (appointment.status === 'cancelled') {
-          acc.cancelledCount += 1;
+      (acc, appointment) => {
+        switch (appointment.status) {
+          case 'scheduled':
+            acc.scheduledCount++;
+            break;
+          case 'pending':
+            acc.pendingCount++;
+            break;
+          case 'cancelled':
+            acc.cancelledCount++;
+            break;
         }
         return acc;
       },
