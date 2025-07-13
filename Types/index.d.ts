@@ -1,13 +1,10 @@
 /* eslint-disable no-unused-vars */
 
-import { Appointment } from '@/Types/appwrite.types';
-
 declare type SearchParamProps = {
   params: { [key: string]: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-declare type Gender = 'male' | 'female' | 'other';
 declare type Status = 'pending' | 'scheduled' | 'cancelled';
 
 declare interface CreateUserParams {
@@ -24,8 +21,6 @@ declare interface RegisterUserParams extends CreateUserParams {
   birthDate: Date;
   gender: Gender;
   address: string;
-  treatmentConsent: string;
-  disclosureConsent: string;
   occupation: string;
   emergencyContactName: string;
   emergencyContactNumber: string;
@@ -46,16 +41,16 @@ declare type CreateAppointmentParams = {
   userId: string;
   patient: string;
   primaryPhysician: string;
-  reason: string | undefined;
+  reason: string;
   schedule: Date;
   status: Status;
   note: string | undefined;
 };
 
-export declare type UpdateAppointmentParams = {
+declare type UpdateAppointmentParams = {
   appointmentId: string | undefined;
   userId: string;
   timeZone?: string;
-  appointment: Partial<Appointment>;
+  appointment: Appointment;
   type: string;
 };

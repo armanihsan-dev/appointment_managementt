@@ -23,7 +23,6 @@ import {
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import Checkbox from '@/components/ui/checkbox';
-import { Label } from '@/components/ui/label';
 
 interface CustomProps {
   control: Control<any>;

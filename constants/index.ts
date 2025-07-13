@@ -1,4 +1,4 @@
-export const GenderOptions = ['male', 'female', 'other'];
+export const GenderOptions = ['Male', 'Female', 'Other'];
 
 export const PatientFormDefaultValues = {
   firstName: '',
@@ -6,7 +6,7 @@ export const PatientFormDefaultValues = {
   email: '',
   phone: '',
   birthDate: new Date(Date.now()),
-  gender: 'male' as Gender,
+  gender: 'male',
   address: '',
   occupation: '',
   emergencyContactName: '',
@@ -80,7 +80,7 @@ export const Doctors = [
 ];
 
 export const StatusIcon = {
-  scheduled: '/assets/icons/check.svg',
-  pending: '/assets/icons/pending.svg',
-  cancelled: '/assets/icons/cancelled.svg',
+  scheduled: '/icons/check.svg',
+  pending: '/icons/pending.svg',
+  cancelled: '/icons/cancelled.svg',
 };

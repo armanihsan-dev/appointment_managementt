@@ -1,12 +1,16 @@
+'use client';
 import PatientForm from '@/components/forms/PatientForm';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import PasskeyModel from '@/components/PasskeyModel';
 
-const Home = () => {
+const Home = ({ searchParams }: SearchParamProps) => {
+  const isAdmin = searchParams?.admin === 'true';
+
   return (
     <div className="flex h-screen max-h-fit">
-      {/* Todo : OTP VERIFICATION | passkey model */}
+      {isAdmin && <PasskeyModel />}
       <section className="remove-scrollbar container">
         <div className="sub-container max-w-[460px] ">
           <Image
@@ -17,7 +21,7 @@ const Home = () => {
             className="mb-12 h-10 w-fit"
           />
           <PatientForm />
-          <div className="text-14-regular mt-20 flex justify-between">
+          <div className="text-14-regular mt-20 flex justify-between pb-6">
             <p className="justify-items-end text-dark-600 xl:text-left">
               © {new Date().getFullYear()} HealthMeet
             </p>

@@ -1,4 +1,6 @@
 import { Models } from 'node-appwrite';
+import { LRUCache } from 'lru-cache';
+import Status = LRUCache.Status;
 
 export interface Patient extends Models.Document {
   userId: string;
@@ -6,7 +8,7 @@ export interface Patient extends Models.Document {
   email: string;
   phone: string;
   birthDate: Date;
-  gender: Gender;
+  gender: 'male' | 'female' | 'other';
   address: string;
   occupation: string;
   emergencyContactName: string;
@@ -27,7 +29,7 @@ export interface Patient extends Models.Document {
 export interface Appointment extends Models.Document {
   patient: Patient;
   schedule: Date;
-  status: Status;
+  status: Status<''>;
   primaryPhysician: string;
   reason: string;
   note: string;

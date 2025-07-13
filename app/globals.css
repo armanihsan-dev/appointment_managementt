@@ -141,11 +141,11 @@ body {
 
   /* ===== ADMIN */
   .admin-header {
-    @apply sticky top-3 z-20 mx-3 flex items-center justify-between rounded-2xl bg-dark-200 px-[5%] py-5 shadow-lg xl:px-12;
+    @apply  top-3 z-20 mx-3 flex items-center justify-between rounded-2xl  px-[5%] py-5 shadow-md xl:px-12;
   }
 
   .admin-main {
-    @apply flex flex-col items-center space-y-6 px-[5%] pb-12 xl:space-y-12 xl:px-12;
+    @apply flex flex-col items-center space-y-6 px-[5%] pb-12 xl:space-y-12 xl:px-12 pt-2;
   }
 
   .admin-stat {
@@ -172,7 +172,7 @@ body {
 
   /* ==== Stat Card */
   .stat-card {
-    @apply flex flex-1 flex-col gap-6 rounded-2xl bg-cover p-6 shadow-lg;
+      @apply flex flex-1 flex-col gap-6 rounded-2xl bg-cover p-6  shadow-[0_1px_10px_rgba(0.2,0.1,0,0.1)];
   }
 
   /* ==== Status Badge */
@@ -182,7 +182,7 @@ body {
 
   /* Data Table */
   .data-table {
-    @apply z-10 w-full overflow-hidden rounded-lg border border-dark-400 shadow-lg;
+    @apply z-10 w-full overflow-hidden rounded-lg border  shadow-[0_1px_10px_rgba(0.2,0.1,0,0.1)];
   }
 
   .table-actions {
@@ -241,7 +241,7 @@ body {
 
   /* =====  SHADCN OVERRIDES */
   .shad-primary-btn {
-    @apply bg-green-500 text-white py-2 rounded-md w-full !important;
+    @apply bg-green-500 text-white py-2 rounded-md px-3 !important;
   }
 
   .shad-danger-btn {
@@ -265,7 +265,7 @@ body {
   }
 
   .shad-textArea {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-dark-400 placeholder:text-dark-600 w-full border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-combobox-item {
@@ -293,7 +293,7 @@ body {
   }
 
   .shad-error {
-    @apply text-red-400 !important;
+    @apply text-red-500 !important;
   }
 
   .shad-table {
@@ -305,7 +305,7 @@ body {
   }
 
   .shad-table-row {
-    @apply border-b border-dark-400 text-light-200 !important;
+    @apply border-b  text-gray-900  !important;
   }
 
   .shad-otp {
@@ -313,7 +313,7 @@ body {
   }
 
   .shad-otp-slot {
-    @apply text-36-bold justify-center flex border border-dark-500 rounded-lg size-16 gap-4 !important;
+    @apply text-36-bold justify-center flex border border-gray-200 rounded-lg size-16 gap-4 text-green-500 !important;
   }
 
   .shad-alert-dialog {
