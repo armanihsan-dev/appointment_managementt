@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { withSentryConfig } from '@sentry/nextjs';
 
 const nextConfig: NextConfig = {
   productionBrowserSourceMaps: true,
@@ -10,14 +11,8 @@ const nextConfig: NextConfig = {
   },
 };
 
-import { withSentryConfig } from '@sentry/nextjs';
-
-const moduleExports = {
-  productionBrowserSourceMaps: true,
-};
-
 const sentryWebpackPluginOptions = {
   silent: true,
 };
 
-export default withSentryConfig(moduleExports, sentryWebpackPluginOptions);
+export default withSentryConfig(nextConfig, sentryWebpackPluginOptions);
